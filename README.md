@@ -16,3 +16,6 @@ SampleTriggerのindex.tsの任意の場所でブレークポイントを設置�
 ```
 SampleTrigger: [GET,POST] http://localhost:7072/api/SampleTrigger
 ```
+
+local.settings.jsonがpushされないように、以下を実行しておきます。
+git update-index --assume-unchanged local.settings.json 
