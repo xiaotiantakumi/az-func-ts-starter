@@ -7,6 +7,19 @@ Use this templateを押します。
 
 できたリポジトリーをgit cloneしてきます。
 
+local.settings.jsonを以下内容で作成します。
+```json
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "node",
+    "AzureWebJobsStorage": ""
+  }
+}
+
+```
+![image](https://user-images.githubusercontent.com/19358182/199638437-086d6dd2-415c-46c7-b6d7-c294cade5171.png)
+
 npm installします。
 
 SampleTriggerのindex.tsの任意の場所でブレークポイントを設置してF5します。
@@ -15,10 +28,4 @@ SampleTriggerのindex.tsの任意の場所でブレークポイントを設置�
 
 ```
 SampleTrigger: [GET,POST] http://localhost:7072/api/SampleTrigger
-```
-
-local.settings.jsonがpushされないように、以下を実行しておきます。
-
-```
-git update-index --assume-unchanged local.settings.json 
 ```
