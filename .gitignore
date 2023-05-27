@@ -50,3 +50,10 @@ __queuestorage__
 __azurite_db*__.json
 .DS_Store
 .eslintcache
+docs/swagger/.swagger-codegen/VERSION
+docs/swagger/api/openapi.yaml
+docs/swagger/controllers/Sample.js
+docs/swagger/service/SampleService.js
+docs/swagger/utils/writer.js
+docs/swagger/index.js
+docs/swagger/.swagger-codegen-ignore
