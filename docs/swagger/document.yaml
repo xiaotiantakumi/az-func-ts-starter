@@ -3,7 +3,7 @@ info:
   title: Sample
   version: "1.0"
 servers:
-  - url: http://localhost:7071/api
+  - url: http://localhost:7072/api
 paths:
   /SampleTrigger:
     get:
