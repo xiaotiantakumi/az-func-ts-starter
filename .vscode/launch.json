@@ -5,10 +5,10 @@
       "name": "Debug Azure Function",
       "request": "launch",
       "runtimeArgs": ["run-script", "start"],
-      "runtimeVersion": "16",
+      "runtimeVersion": "18",
       "runtimeExecutable": "npm",
       "skipFiles": ["<node_internals>/**"],
-      "type": "pwa-node",
+      "type": "node",
       "console": "integratedTerminal"
     },
     {
