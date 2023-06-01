@@ -28,3 +28,17 @@ paths:
               examples:
                 Sample:
                   value: Hello, World This HTTP triggered function executed successfully.
+  /SampleTableAccess:
+    get:
+      tags:
+        - SampleTableAccess
+      summary: demonstrate table access
+      description: This API to demonstrate table access.Using TypeORM.
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              examples:
+                Sample:
+                  value: Hello, World This HTTP triggered function executed successfully.

@@ -1,4 +1,4 @@
-create table db.sample_db
+create table db.sample_table
 (
     id         bigint auto_increment
         primary key,
@@ -10,7 +10,7 @@ create table db.sample_db
     updated_at datetime(6)  default CURRENT_TIMESTAMP(6) not null on update CURRENT_TIMESTAMP(6) comment '更新日時',
     updated_by varchar(255) default 'system'             not null comment '更新者'
 );
-INSERT INTO db.sample_db (name, age, address)
+INSERT INTO db.sample_table (name, age, address)
 VALUES ('John Doe', 30, '123 Main St'),
        ('Jane Doe', 28, '456 Elm St'),
        ('Jim Smith', 35, '789 Oak St'),

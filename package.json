@@ -18,7 +18,11 @@
     "docs": "js-yaml ./docs/swagger/document.yaml > ./docs/swagger/document.json && prettier --write docs/swagger",
     "swagger": "lsof -ti :8080 | xargs kill && swagger-codegen generate -i ./docs/swagger/document.yaml -l nodejs-server -o ./docs/swagger && npm --prefix ./docs/swagger install && node docs/swagger/index.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.7"
+  },
   "devDependencies": {
     "@azure/functions": "^3.0.0",
     "@types/node": "^18.0.4",
