@@ -8,10 +8,15 @@ export default {
     "^.+\\.(ts|tsx)$": "ts-jest",
   },
   verbose: true,
-  coveragePathIgnorePatterns: ["/tests/", "/node_modules/"],
+  coveragePathIgnorePatterns: [
+    "/tests/",
+    "/node_modules/",
+    "<rootDir>/db-service/appDataSource.ts",
+  ],
   coverageThreshold: {
     "**/*": {
       statements: 70,
     },
   },
+  globalSetup: "<rootDir>/tests/setupEnv.ts",
 };

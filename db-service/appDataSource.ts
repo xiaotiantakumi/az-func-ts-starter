@@ -29,14 +29,8 @@ const setUp = async () => {
   });
 };
 export const destroy = async () => {
-  // destroyを呼び出さないことでコネクションの解放が行われない可能性がありますが、現状こうしないといけなそう。
-  // 理由としては、Invocation IDがHttpトリガーのエンドポイントで一意とならなかったため。
-  // このため、別エンドポイントとConnectionが混じり、あるエンドポイントでのdestroyによって他のエンドポイントで接続しようとして
-  // Connectionがないというエラーになっていた。以下コメントアウトを解除した上で複数エンドポイント実行のログを確認し
-  // Invocation IDが混在していないか検証してください。以下記事が関係しているかもしれない。
-  // https://learn.microsoft.com/en-us/answers/questions/780257/azure-function-logs-mixing-34invocation-id34-with.html
-  // if (!appDataSource.isInitialized) return;
-  // await appDataSource.destroy().catch((error) => {
-  //   logger?.error(error, "AppDataSource.destroy");
-  // });
+  if (!appDataSource.isInitialized) return;
+  await appDataSource.destroy().catch((error) => {
+    console.log(error);
+  });
 };
