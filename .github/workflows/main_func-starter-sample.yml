@@ -6,7 +6,7 @@ name: Build and deploy Node.js project to Azure Function App - func-starter-samp
 on:
   push:
     branches:
-      - main
+      - "*"
   workflow_dispatch:
 
 env:
@@ -36,9 +36,6 @@ jobs:
       - name: 'Run Docker Compose'
         run: |
             docker compose -f ./docker/docker-compose.yml up -d --wait
-            while ! nc -z localhost 3306; do
-              sleep 1
-            done
 
       - name: 'Show Docker Compose log'
         run: |
@@ -46,6 +43,16 @@ jobs:
             cd ./docker
             docker compose logs
             popd
+
+      - name: 'Wait for DB to be ready'
+        run: |
+            host="localhost"
+            dbUser="root"
+            dbPass="root"
+            until mysql --host=$host --user=$dbUser --password=$dbPass --protocol=TCP -e "SELECT 1"; do
+              echo "Waiting for DB to start..."
+              sleep 5
+            done
 
       - name: 'Run tests'
         run: |
