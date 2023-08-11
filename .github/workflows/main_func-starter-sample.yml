@@ -49,7 +49,7 @@ jobs:
             host="localhost"
             dbUser="root"
             dbPass="root"
-            until mysql --host=$host --user=$dbUser --password=$dbPass -e "SELECT 1"; do
+            until mysql --host=$host --user=$dbUser --password=$dbPass --protocol=TCP -e "SELECT 1"; do
               echo "Waiting for DB to start..."
               sleep 5
             done
