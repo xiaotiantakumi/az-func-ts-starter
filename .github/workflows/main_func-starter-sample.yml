@@ -36,7 +36,7 @@ jobs:
       - name: 'Run Docker Compose'
         run: |
             docker compose -f ./docker/docker-compose.yml up -d --wait
-            while ! nc -z mysql_db_container 3306; do
+            while ! nc -z localhost 3306; do
               sleep 1
             done
 
